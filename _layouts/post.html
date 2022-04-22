@@ -25,7 +25,7 @@
 	<main>
 		<h2>{{ page.title }}</h2>
 		<div class="entry-content">{{ content }}</div>
-		<div class="publikasi">Dipublikasikan pada {{ page.date | date: "%e %B %Y %H:%M"}} -  {{ site.time | date_to_xmlschema }}</div>
+		<div class="publikasi">Dipublikasikan pada {{ page.date | date: "%e %B %Y %H:%M"}} -  {{ page.date | date_to_xmlschema }}</div>
 	</main>
 	<footer>
 		<a href="https://wirozablenk.github.io">GubugWirozablenk</a> Oleh <a href="https://github.com/wirozablenk">wirozablenk</a><br/>
