@@ -14,7 +14,9 @@
 		a:link {text-decoration: none;}
 		a:hover {text-decoration: underline;}
 		header {padding: 10px;background: red;}
+		main {padding: 10px;}
 		.tampilan-gambar {width: 80%; height: auto}
+		.publikasi {background: hsla(210,18%,87%,1);}
 		footer {padding: 10px;background: green;}
 	</style>
 </head>
@@ -22,8 +24,8 @@
 	<header><h1>GubugWirozablenk</h1></header>
 	<main>
 		<h2>{{ page.title }}</h2>
-		<div class="entry">{{ content }}</div>
-		<div class="date">Dipublikasikan pada {{ page.date | date: "%e %B %Y" }}</div>
+		<div class="entry-content">{{ content }}</div>
+		<div class="publikasi">Dipublikasikan pada {{ page.date | date: "%e %B %Y" }}</div>
 	</main>
 	<footer>
 		<a href="https://wirozablenk.github.io">GubugWirozablenk</a> Oleh <a href="https://github.com/wirozablenk">wirozablenk</a><br/>
