@@ -1,1 +1,1 @@
-Just Another GitHub Projects By Wiro Zablenk
+:warning: Just Another :octocat: GitHub Projects By :trollface: Wiro Zablenk
