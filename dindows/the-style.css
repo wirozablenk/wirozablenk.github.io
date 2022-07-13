@@ -1,0 +1,332 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;background:transparent}
+body{line-height:1}
+h1 {font-size: 1.5em;margin-bottom: 10px;}
+p{font-size: 1em;line-height: 1.3em;margin-bottom: 10px;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;opacity: 0.5;background: linear-gradient( to right, red 20%, yellow 20%, yellow 36%, green 36%, green 60%, blue 60%, blue 100% );}
+input,select{vertical-align:middle}
+@font-face {
+    font-family: 'dingizrpixlmedium';
+    src: url('../font/dingizrpixl-medium.eot');
+    src: url('../font/dingizrpixl-medium.eot?#iefix') format('embedded-opentype'),
+         url('../font/dingizrpixl-medium.woff2') format('woff2'),
+         url('../font/dingizrpixl-medium.woff') format('woff'),
+         url('../font/dingizrpixl-medium.ttf') format('truetype'),
+         url('../font/dingizrpixl-medium.svg#dingizrpixlmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Pixelated MS Sans Serif';
+    src: url('../font/ms_sans_serif.woff2') format('woff2'),
+         url('../font/ms_sans_serif.woff') format('woff');
+	font-weight: normal;
+    font-style: normal;
+
+}
+.pixelated {
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+:root { 
+	/* Colors */
+	--ActiveBorder: rgb(192, 192, 192);
+	--ActiveTitle: rgb(0, 0, 128);
+	--AppWorkspace: rgb(128, 128, 128);
+	--Background: rgb(0, 128, 128);
+	--ButtonAlternateFace: rgb(180, 180, 180);
+	--ButtonDkShadow: rgb(0, 0, 0);
+	--ButtonFace: rgb(192, 192, 192);
+	--ButtonHilight: rgb(255, 255, 255);
+	--ButtonLight: rgb(223, 223, 223);
+	--ButtonShadow: rgb(128, 128, 128);
+	--ButtonText: rgb(0, 0, 0);
+	--GradientActiveTitle: rgb(16, 132, 208);
+	--GradientInactiveTitle: rgb(181, 181, 181);
+	--GrayText: rgb(128, 128, 128);
+	--Hilight: rgb(0, 0, 128);
+	--HilightText: rgb(255, 255, 255);
+	--HotTrackingColor: rgb(0, 0, 255);
+	--InactiveBorder: rgb(192, 192, 192);
+	--InactiveTitle: rgb(128, 128, 128);
+	--InactiveTitleText: rgb(192, 192, 192);
+	--InfoText: rgb(0, 0, 0);
+	--InfoWindow: rgb(255, 255, 225);
+	--Menu: rgb(192, 192, 192);
+	--MenuText: rgb(0, 0, 0);
+	--Scrollbar: rgb(192, 192, 192);
+	--TitleText: rgb(255, 255, 255);
+	--Window: rgb(255, 255, 255);
+	--WindowFrame: rgb(0, 0, 0);
+	--WindowText: rgb(0, 0, 0);
+}
+
+#desktop {
+	font-family: "Pixelated MS Sans Serif", "dingizrpixlmedium", Arial, Helvetica, sans-serif;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: var(--Background);
+	overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.window {
+    position: absolute;
+    background: silver;
+	z-index: 1000;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+	padding: 3px;
+}
+.window.closed {
+	display: none;
+}
+.window.minimizedWindow {
+	display: none;
+}
+.window.fullSizeWindow {
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 32px !important;
+}
+.fullSizeWindow .ui-resizable-handle {
+	display: none;
+}
+.windowHeader {
+    background-color: silver;
+    text-align: right;
+    padding: 2px;
+    cursor: move;
+    height: 28px;
+}
+.activeWindow .windowHeader {
+    background: linear-gradient(90deg, navy, #1084d0);
+}
+.windowHeader > span {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 4px;
+    font-size: 19px;
+    padding: 2px 10px;
+    line-height: 20px;
+    width: 12px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+	background: silver;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+.windowHeader > span:hover {
+	/* background: rgba(255,255,255,0.3); */
+}
+.windowHeader > span.winclose:hover {
+	/* background: #f15454; */
+}
+.windowHeader > span > span {
+    display: inline-block;
+    height: 8px;
+    width: 10px;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+.winminimize > span {
+	border-bottom: 3px solid #000;
+}
+.winmaximize > span {
+	border: 2px solid #000;
+	border-top: 3px solid #000;
+}
+.winmaximize > span:nth-child(2) {
+	display: none;
+}
+.fullSizeWindow .winmaximize > span:nth-child(1) {
+	margin: 2px 0 0 -4px;
+}
+.fullSizeWindow .winmaximize > span:nth-child(2) {
+    display: inline-block;
+    top: 3px;
+    left: 12px;
+}
+.wincontent {
+    padding: 10px;
+    min-width: 200px;
+    min-height: 140px;
+    margin: 2px;
+	background: #fff;
+	box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+.windowHeader > strong {
+    float: left;
+    margin: 0px 3px 0 10px;
+    line-height: 29px;
+    font-size: 17px;
+}
+.taskbarPanel {
+    display: inline-block;
+    border: 2px solid;
+    line-height: 24px;
+    margin: 2px 0 0 10px;
+    font-size: 17px;
+    padding: 0 10px;
+    background-color: var(--ButtonFace);
+    font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonLight);
+}
+.taskbarPanel.activeTab {
+	background: #FFF;
+}
+.taskbarPanel.minimizedTab {
+	background: #AAA;	
+}
+.taskbarPanel.minimizedTab:hover {
+	background: #DDD;
+}
+.taskbarPanel.closed {
+	display: none;
+}
+#taskbar {
+	position: absolute;
+	height: 32px;
+	border-top: 1px solid var(--ButtonHilight);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: var(--ButtonFace);
+	outline: 1px solid var(--ButtonLight);
+	color: var(--ButtonText);
+}
+#icons {
+	position: absolute;
+	z-index: 10;
+	top: 20px;
+	left: 20px;
+	text-align:center;
+}
+#icons a {
+    display: block;
+    cursor: pointer;
+    padding: 2px 10px;
+}
+#icons a:hover {
+	background: var(--Hilight);
+	color: var(--HilightText);
+}
+
+/*Demo styles BEGIN*/
+#window0 {top: 20px;left: 240px;}
+#window1 {top: 200px; left: 60px;}
+#window2 {top: 120px; left: 150px;}
+#window3 {top: 63px; left: 210px;}
+#window4{top: 63px; left: 210px;}
+#window0 .wincontent {width: 660px; height: 400px;}
+#window1 .wincontent {width: 500px; height: 300px;}
+#window2 .wincontent {width: 400px; height: 350px;}
+#window3 .wincontent {width: 400px; height: 350px;}
+#window4 .wincontent {width: 400px; height: 350px;}
+@media screen and (max-width:960px){
+#window0 {left: 10px;}
+#window3 {left: 50px;}
+}
+@media screen and (max-width:770px){
+#window0 .wincontent {width: 460px;}
+#window2 {left: 100px;}
+#window1 {top: 190px;left: -5px;}
+}
+@media screen and (max-width:540px){
+#window0 .wincontent {width: 230px; height: 200px;}
+#window3 .wincontent {
+    width: 275px;
+    height: auto;
+}
+#window3 {top: 9px;left: 10px;}
+#window2 {left: -118px;}
+#window1 .wincontent {width: auto;height: 300px;}
+}
+.dropbtn {
+  background-color: var(--ButtonFace);
+  color: white;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 16px;
+  box-shadow: 1.5px 1.5px #000;
+  border-top: 1.5px solid #fafafa;
+  border-left: 1.5px solid #fafafa;
+  border-bottom: 1.5px solid #5a5a5a;
+  border-right: 1.5px solid #5a5a5a;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content {
+  color: white;
+  display: none;
+  position: absolute;
+  background-color: #c0c0c0;
+  min-width: 320px; 
+  bottom: 32px;
+  z-index: 99999;
+  border-style: solid;
+  border-width: 2px 2px;
+  border-image: var(--button-normal-border-image);
+  border-color: rgb(223, 223, 223) rgb(128, 128, 128) rgb(128, 128, 128) rgb(223, 223, 223);
+  font-size:small;
+}
+
+.dropup-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  color:#000;
+}
+
+.dropup-content a:hover {
+	background-color: #0000ff;
+	color:#fff;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+  text-shadow: none !important;
+}
+
+.dropup:hover .dropbtn {
+  background-color: #0000ff;
+}
+#avatar {
+	cursor: pointer;
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	right: 45px;
+	top: -20px;
+	box-shadow: rgb(123, 120, 119) 0px 0px 0px 1px, rgba(255, 255, 255, 0.33) 0px 0px 0px 2px, rgba(116, 216, 233, 0.6) 0px 0px 0px 5px, rgba(0, 0, 0, 0.5) 0px 1px 5px 6px;
+	border-radius: 1px;
+}
+.dindows1 {
+	float: right;
+	height: 16px;
+	margin: 3px;
+	padding: 4px;
+	box-shadow: inset -1px -1px #dfdfdf,inset 1px 1px grey;
+	font-size: 16px;
+}
