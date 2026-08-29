@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyW98SE</title>
+	<meta charset="UTF-8" />
+	<style type="text/css">
+/*! 98.css v0.1.21 - https://github.com/jdan/98.css */
+/**
+ * 98.css
+ * Copyright (c) 2020 Jordan Scales <thatjdanisso.cool>
+ * https://github.com/jdan/98.css/blob/main/LICENSE
+ */
+:root {
+}
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://jdan.github.io/98.css/ms_sans_serif.woff2") format("woff");
+  src: url("https://jdan.github.io/98.css/ms_sans_serif.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://jdan.github.io/98.css/ms_sans_serif_bold.woff") format("woff");
+  src: url("https://jdan.github.io/98.css/ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+.title-bar98, .window98, .button98, input, label, legend, li[role=tab], option, select, table, textarea, ul.tree-view {
+    -webkit-font-smoothing: none;
+    font-family: "Pixelated MS Sans Serif",Arial;
+    font-size: 11px;
+}
+.window98 {
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;
+    padding: 3px;
+}
+.title-bar98 {
+    align-items: center;
+    background: linear-gradient(90deg,navy,#1084d0);
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 2px 3px 3px;
+}
+.title-bar-text98 {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-right: 24px;
+}
+.title-bar-controls98 {
+    display: flex;
+}
+.title-bar-controls98 .button98[aria-label=Minimize], .title-bar-controls98 .button98[aria-label] .minimize {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
+    background-position: bottom 3px left 4px;
+    background-repeat: no-repeat;
+}
+.title-bar-controls98 .button98 {
+    display: block;
+    min-height: 14px;
+    min-width: 16px;
+    padding: 0;
+}
+.button98, input[type=reset], input[type=submit] {
+    background: silver;
+    border: none;
+    border-radius: 0;
+    box-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;
+    box-sizing: border-box;
+    color: transparent;
+    min-height: 23px;
+    min-width: 75px;
+    padding: 0 12px;
+    text-shadow: 0 0 #222;
+}
+.title-bar-controls98 .button98[aria-label=Maximize], .title-bar-controls98 .button98[aria-label] .maximize {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
+    background-position: top 2px left 3px;
+    background-repeat: no-repeat;
+}
+.title-bar-controls98 .button98[aria-label=Close], .title-bar-controls98 .button[aria-label] .close {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+    background-position: top 3px left 4px;
+    background-repeat: no-repeat;
+    margin-left: 2px;
+}
+.window-body98 {
+    margin: 8px;
+}
+p {
+    max-width: 50rem;
+    line-height: 1.5;
+}
+.field-row98 {
+    align-items: center;
+    display: flex;
+}
+
+	</style>
+</head>
+<body>
+	<div class="window98" style="margin: 32px; width: 250px">
+		<div class="title-bar98">
+			<div class="title-bar-text98">MyW98SE</div>
+				<div class="title-bar-controls98">
+					<button aria-label="Minimize" class='button98'></button>
+					<button aria-label="Maximize" class='button98'></button>
+					<button aria-label="Close" class='button98'></button>
+				</div>
+		</div>
+		<div class="window-body98">
+			<p>Hello, world!</p>
+			<section class="field-row98" style="justify-content: flex-end">
+				<button class='button98'>OK</button>
+				<button class='button98'>Cancel</button>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
