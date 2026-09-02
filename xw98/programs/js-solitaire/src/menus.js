@@ -80,7 +80,7 @@ var menus = {
 		{
 			item: "&About Solitaire...",
 			action: ()=> {
-				window.open("");
+				window.open("https://github.com/rjanjic/js-solitaire");
 			},
 			description: "About Solitaire"
 		},
